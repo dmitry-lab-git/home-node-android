@@ -1,6 +1,7 @@
 ﻿plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.10"
 }
 
 android {
@@ -56,7 +57,8 @@ dependencies {
     implementation(libs.ktor.server.netty)
     implementation(libs.ktor.server.content.negotiation)
     implementation(libs.ktor.serialization.kotlinx.json)
-
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.cio)
     // Базовые зависимости
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
